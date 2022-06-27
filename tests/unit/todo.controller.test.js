@@ -1,5 +1,5 @@
 const TodoController = require("../../controllers/todo.controller");
-const TodoModel = require("../../model/todo.model");
+const TodoModel = require("../../models/todo.model");
 
 TodoModel.create = jest.fn();
 
@@ -8,7 +8,7 @@ describe("TodoController.createTodo", () => {
     expect(typeof TodoController.createTodo).toBe("function");
   });
   it("should call TodoModel.create", () => {
-    TodoController.createTodo(req, res, next);
+    TodoController.createTodo();
     expect(TodoModel.create).toBeCalled();
   });
 });
